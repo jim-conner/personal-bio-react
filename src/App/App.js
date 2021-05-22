@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import firebase from 'firebase';
+import Routes from '../helpers/Routes';
+
 // import 'firebase/auth';
 import './App.scss';
+import NavBar from './components/NavBar';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,10 +29,12 @@ function App() {
     });
   }, []);
   return (
-    <div className='App'>
-      {console.warn('test')}
-      <h3>{'test'}</h3>
-    </div>
+    <>
+      <Router>
+        <NavBar />
+        <Routes/>
+      </Router>
+    </>
   );
 }
 
