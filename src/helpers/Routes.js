@@ -7,11 +7,11 @@ function Routes() {
   return (
     <div>
       <Switch>
-        <Route exact path='/'>JIM CONNER</Route>
-        <Route exact path='/bio'>BIO</Route>
-        <Route exact path='/projects'>PROJECTS</Route>
-        <Route exact path='/tech'>TECH</Route>
-        <Route exact path='/contact'>Contact</Route>
+        <Route exact path='/'></Route>
+        <Route exact path='/bio'></Route>
+        <Route exact path='/projects'></Route>
+        <Route exact path='/tech'></Route>
+        <Route exact path='/contact'></Route>
 
         <PrivateRoute
           exact
