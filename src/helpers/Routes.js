@@ -6,16 +6,11 @@ function Routes() {
   return (
     <div>
       <Switch>
-        <Route exact path='/'>
-        </Route>
-        <Route exact path='/projects'>
-        </Route>
-        <Route exact path='/about'>
-        </Route>
-        <Route exact path='/tech'>
-        </Route>
-        <Route exact path='/contact'>
-        </Route>
+        <Route exact path='/'>JIM CONNER</Route>
+        <Route exact path='/projects'></Route>
+        <Route exact path='/about'></Route>
+        <Route exact path='/tech'></Route>
+        <Route exact path='/contact'></Route>
 
       </Switch>
     </div>
