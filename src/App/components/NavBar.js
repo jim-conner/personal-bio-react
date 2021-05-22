@@ -11,23 +11,44 @@ import {
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
 
-const NavBar = ({ user }) => {
+const NavBar = ({ admin }) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   const authenticated = () => (
- 
+    <>
+      <NavItem>
+        <Link className="nav-link" to="/projects">
+          PROJECTS
+          </Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/about">
+          ABOUT
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/tech">
+          TECH
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/contact">
+          CONTACT
+        </Link>
+      </NavItem>
+    </>
   );
 
   const authButtons = () => (
     <>
       <NavItem>
         {
-          user !== null
+          admin !== null
           && <div>
             {
-              user
+              admin
                 ? <Button color='danger' onClick={signOutUser}>SIGN OUT</Button>
                 : <Button color='info' onClick={signInUser}>SIGN IN</Button>
             }
@@ -40,11 +61,11 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <Link className="navbar-brand" to="/">JIM CONNER</Link>
+        <Link className="navbar-brand" to="/">HOME</Link>
         <NavbarToggler onClick={toggleNavbar} className="mr-2"/>
         <Collapse isOpen={!collapsed} navbar>
           <Nav className="mr-auto" navbar>
-            { user && authenticated() }
+            { admin && authenticated() }
             { authButtons() }
           </Nav>
         </Collapse>
@@ -54,7 +75,7 @@ const NavBar = ({ user }) => {
 };
 
 NavBar.propTypes = {
-  user: PropTypes.any
+  admin: PropTypes.any
 };
 
 export default NavBar;

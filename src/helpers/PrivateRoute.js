@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component, admin, ...rest }) => {
   const routeChecker = (allTheProps) => (admin
-    ? (<Component {...allTheProps} user={admin} />)
+    ? (<Component {...allTheProps} admin={admin} />)
     : (<Redirect to={{ pathname: '/', state: { from: allTheProps.location } }} />));
   return <Route {...rest} render={(props) => routeChecker(props)} />;
 };

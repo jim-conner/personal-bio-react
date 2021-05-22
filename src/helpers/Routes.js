@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 function Routes() {
   return (
@@ -12,13 +13,18 @@ function Routes() {
         <Route exact path='/tech'></Route>
         <Route exact path='/contact'></Route>
 
+        <PrivateRoute
+          exact
+          path='/admin'
+        >
+        </PrivateRoute>
       </Switch>
     </div>
   );
 }
 
-// Routes.propTypes = {
+Routes.propTypes = {
 
-// };
+};
 
 export default Routes;
