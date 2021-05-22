@@ -17,28 +17,7 @@ const NavBar = ({ user }) => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   const authenticated = () => (
-    <>
-      <NavItem>
-        <Link className="nav-link" to="/projects">
-          PROJECTS
-          </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/about">
-          ABOUT
-        </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/tech">
-          TECH
-        </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/contact">
-          CONTACT
-        </Link>
-      </NavItem>
-    </>
+ 
   );
 
   const authButtons = () => (
@@ -61,7 +40,7 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <Link className="navbar-brand" to="/">HOME</Link>
+        <Link className="navbar-brand" to="/">JIM CONNER</Link>
         <NavbarToggler onClick={toggleNavbar} className="mr-2"/>
         <Collapse isOpen={!collapsed} navbar>
           <Nav className="mr-auto" navbar>
