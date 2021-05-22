@@ -48,12 +48,12 @@ const NavBar = ({ admin }) => {
     <>
     <NavItem>
       {
-        admin !== null
+        admin !== true
         && <div>
           {
             admin
-              ? <Button color='danger' onClick={signOutUser}>SIGN OUT</Button>
-              : <Button color='success' onClick={signInUser}>SIGN IN</Button>
+              ? <Button color='danger' onClick={signOutUser}>Admin In</Button>
+              : <Button color='success' onClick={signInUser}>Admin out</Button>
           }
         </div>
       }
@@ -88,7 +88,7 @@ const NavBar = ({ admin }) => {
                 CONTACT
               </Link>
             </NavItem>
-            {authenticated() && admin}
+            {admin && authenticated()}
             {authButtons()}
             </Nav>
             <NavbarText>
