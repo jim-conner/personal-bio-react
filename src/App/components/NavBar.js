@@ -5,14 +5,14 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText,
+  // NavbarText,
   Button
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
@@ -21,6 +21,13 @@ const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, []);
 
   const authenticated = () => (
     <>
@@ -45,26 +52,24 @@ const NavBar = ({ admin }) => {
   );
 
   const authButtons = () => (
-    <>
     <NavItem>
       {
-        admin !== true
-        && <div>
+        admin !== null
+        && <>
           {
             admin
-              ? <Button color='danger' onClick={signOutUser}>Admin In</Button>
-              : <Button color='success' onClick={signInUser}>Admin out</Button>
+              ? <Button color='danger' onClick={signOutUser}>Admin Out</Button>
+              : <Button color='success' onClick={signInUser}>Admin In</Button>
           }
-        </div>
+        </>
       }
       </NavItem>
-      </>
   );
 
   return (
     <div>
       <Navbar color="info" light expand="lg">
-        <NavbarBrand href="/">JIM CONNER</NavbarBrand>
+        <Link className="nav-link" to="/">JIM CONNER</Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -91,9 +96,9 @@ const NavBar = ({ admin }) => {
             {admin && authenticated()}
             {authButtons()}
             </Nav>
-            <NavbarText>
+            {/* <NavbarText>
               Welcome!
-            </NavbarText>
+            </NavbarText> */}
           </Collapse>
       </Navbar>
     </div>
