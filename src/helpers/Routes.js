@@ -18,6 +18,11 @@ function Routes() {
           path='/admin'
         >
         </PrivateRoute>
+        <PrivateRoute
+          exact
+          path='/admin-projects'
+        >
+        </PrivateRoute>
       </Switch>
     </div>
   );
