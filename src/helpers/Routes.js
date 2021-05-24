@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import ProjectsView from '../App/Views/Projects';
 import PrivateRoute from './PrivateRoute';
 
 function Routes() {
@@ -9,7 +10,10 @@ function Routes() {
       <Switch>
         <Route exact path='/'></Route>
         <Route exact path='/bio'></Route>
-        <Route exact path='/projects'></Route>
+        <Route exact path='/projects'
+          component={() => <ProjectsView/>}
+        >
+        </Route>
         <Route exact path='/tech'></Route>
         <Route exact path='/contact'></Route>
 
