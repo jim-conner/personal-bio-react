@@ -1,17 +1,17 @@
 import React from 'react';
-import {
-  Button,
-  CardImg,
-  Card,
-  CardTitle,
-  CardText,
-  CardBody,
-} from 'reactstrap';
+// import {
+//   Button,
+//   CardImg,
+//   Card,
+//   CardTitle,
+//   CardText,
+//   CardBody,
+// } from 'reactstrap';
 
 function AddProject() {
   return (
     <div>
-      <Card body
+      {/* <Card body
         className='customizedCard'
         key={firebaseKey}
         color='transparent'
@@ -37,7 +37,7 @@ function AddProject() {
             position={position}
           />}
         </CardBody>
-      </Card>
+      </Card> */}
     </div>
   );
 }
