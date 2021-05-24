@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import AddProject from '../App/components/forms/AddProject';
 import ProjectsView from '../App/Views/Projects';
 import PrivateRoute from './PrivateRoute';
 
@@ -25,6 +26,7 @@ function Routes() {
         <PrivateRoute
           exact
           path='/admin-projects'
+          component={() => <AddProject/>}
         >
         </PrivateRoute>
       </Switch>

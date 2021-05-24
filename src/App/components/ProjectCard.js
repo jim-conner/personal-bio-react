@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // import { useHistory } from 'react-router-dom';
@@ -10,11 +10,11 @@ import {
   CardTitle,
   CardText,
   CardBody,
+  CardLink,
 } from 'reactstrap';
 
 function ProjectCard({ ...projectObj }) {
   return (
-    <div>
       <Card body
         className='customizedCard'
         key={projectObj.firebaseKey}
@@ -25,7 +25,7 @@ function ProjectCard({ ...projectObj }) {
         <CardBody>
           <CardTitle tag="h3">{projectObj.title}</CardTitle>
           <CardText tag="h5">{projectObj.description}</CardText>
-          <Link to={projectObj.gitHubUrl}></Link>
+          <CardLink href={projectObj.gitHubUrl}>GitHub Repo</CardLink>
           {/* <Button color='info' onClick={() => handleClick('edit')}> */}
             {/* {editNow ? 'Close Form' : 'Edit Form'} */}
           {/* </Button>
@@ -44,16 +44,11 @@ function ProjectCard({ ...projectObj }) {
           />} */}
         </CardBody>
       </Card>
-    </div>
   );
 }
 
 ProjectCard.propTypes = {
   projectObj: PropTypes.object
-  // firebaseKey: PropTypes.string,
-  // name: PropTypes.string,
-  // position: PropTypes.string,
-  // imageUrl: PropTypes.string,
 };
 
 export default ProjectCard;

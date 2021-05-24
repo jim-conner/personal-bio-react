@@ -4,14 +4,23 @@ import firebaseConfig from '../apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 const getProjects = () => new Promise((resolve, reject) => {
-  // console.warn(`${dbUrl}/projects.json`);
   axios.get(`${dbUrl}/projects.json`)
     .then((response) => {
       const projectsArray = Object.values(response.data);
       resolve(projectsArray);
-      console.warn(projectsArray);
     })
     .catch((error) => reject(error));
 });
 
-export default getProjects;
+const createProject = (project) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/projects.json`, project)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/players/${response.data.name}.json`, body)
+        .then(() => {
+          getProjects().then((projectsArray) => resolve(projectsArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export { getProjects, createProject };
