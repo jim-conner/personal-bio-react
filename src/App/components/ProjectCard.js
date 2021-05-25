@@ -17,7 +17,7 @@ function ProjectCard({ ...projectObj }) {
   return (
       <Card body
         className='customizedCard'
-        key={projectObj.firebaseKey}
+        // key={projectObj.firebaseKey}
         color='transparent'
         >
         <CardImg top width="100%" height="200px"src={projectObj.image} alt="Player Card"

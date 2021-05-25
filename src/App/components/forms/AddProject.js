@@ -11,7 +11,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
     firebaseKey: projectObj?.firebaseKey || null,
     image: projectObj?.image || '',
     gitHubUrl: projectObj?.gitHubUrl || '',
-    netlifyUrl: projectObj?.netlifyUrl || ''
+    deployUrl: projectObj?.deployUrl || ''
   });
 
   const handleInputChange = (e) => {
@@ -24,7 +24,6 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     createProject(project).then((projectsArray) => (setProjects(projectsArray)));
-    // console.warn(project);
   };
 
   return (
@@ -39,6 +38,14 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
         />
       </FormGroup>
       <FormGroup>
+        <Label for="title">Image</Label>
+        <Input type="Url" name="image"
+        placeholder="Add a screenshot"
+        value={project.image}
+        onChange={handleInputChange}
+        />
+      </FormGroup>
+      <FormGroup>
         <Label for="deployUrl">Deploy Link</Label>
         <Input type="Url" name="deployUrl"
         placeholder="Enter Deployed Site URL"
@@ -48,7 +55,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
       </FormGroup>
       <FormGroup>
         <Label for="gitHubUrl">GitHub Repo Link</Label>
-        <Input type="Url" name="gitHubLink"
+        <Input type="Url" name="gitHubUrl"
         placeholder="Enter GitHub Repo URL"
         value={project.gitHubUrl}
         onChange={handleInputChange}
@@ -56,18 +63,18 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
       </FormGroup>
       <FormGroup>
         <Label for="description">Description</Label>
-        <Input type="textarea" name="text"
+        <Input type="textarea" name="description"
         placeholder="Describe the Project"
         value={project.description}
         onChange={handleInputChange}
         />
       </FormGroup>
-      <FormGroup tag="fieldset">
+      {/* <FormGroup tag="fieldset">
         <legend>Available?</legend>
         <FormGroup check>
           <Label check>
             <Input type="radio" name="radio1"
-              // value={project.available} need to work on this later T/F
+              value={project.available} need to work on this later T/F
             />{' '}
             Yes
           </Label>
@@ -78,8 +85,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
             No
           </Label>
         </FormGroup>
-
-      </FormGroup>
+      </FormGroup> */}
       <Button color= 'primary' type='submit'>Submit</Button>
     </Form>
   </div>
@@ -87,8 +93,8 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
 }
 
 AddEditProjectForm.propTypes = {
-  projectObj: PropTypes.object,
-  setProjects: PropTypes.func.isRequired
+  setProjects: PropTypes.func,
+  projectObj: PropTypes.object
 };
 
 export default AddEditProjectForm;
