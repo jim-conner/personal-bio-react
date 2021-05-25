@@ -6,6 +6,7 @@ import './App.scss';
 import NavBar from './components/NavBar';
 
 function App() {
+  const [projects, setProjects] = useState([]);
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
@@ -23,10 +24,11 @@ function App() {
       <Router>
         <NavBar
         admin={admin}
-
         />
         <Routes
         admin={admin}
+        projects={projects}
+        setProjects={setProjects}
         />
       </Router>
     </>
