@@ -23,4 +23,18 @@ const createProject = (project) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getProjects, createProject };
+const deleteProject = (project) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/projects.json${project.firebaseKey}`)
+    .then(() => getProjects().then((projectsArray) => resolve(projectsArray)))
+    .catch((error) => reject(error));
+});
+
+const updateProject = (project) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/players/${project.firebaseKey}.json`, project)
+    .then(() => getProjects().then(resolve))
+    .catch((error) => reject(error));
+});
+
+export {
+  getProjects, createProject, deleteProject, updateProject
+};
