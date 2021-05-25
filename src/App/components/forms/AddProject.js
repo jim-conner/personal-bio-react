@@ -5,13 +5,13 @@ import {
 } from 'reactstrap';
 import { createProject } from '../../../helpers/data/projectData';
 
-function AddEditProjectForm({ setProjects }) {
+function AddEditProjectForm({ setProjects, ...projectObj }) {
   const [project, setProject] = useState({
-    title: title || '',
-    firebaseKey: firebaseKey || null,
-    image: image || '',
-    gitHubUrl: gitHubUrl || '',
-    netlifyUrl: netlifyUrl || ''
+    title: projectObj?.title || '',
+    firebaseKey: projectObj?.firebaseKey || null,
+    image: projectObj?.image || '',
+    gitHubUrl: projectObj?.gitHubUrl || '',
+    netlifyUrl: projectObj?.netlifyUrl || ''
   });
 
   const handleInputChange = (e) => {
@@ -66,7 +66,7 @@ function AddEditProjectForm({ setProjects }) {
         <legend>Available?</legend>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="radio1" 
+            <Input type="radio" name="radio1"
               // value={project.available} need to work on this later T/F
             />{' '}
             Yes
@@ -89,7 +89,6 @@ function AddEditProjectForm({ setProjects }) {
 AddEditProjectForm.propTypes = {
   projectObj: PropTypes.object,
   setProjects: PropTypes.func.isRequired
-
 };
 
 export default AddEditProjectForm;
