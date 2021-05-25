@@ -9,7 +9,10 @@ function Routes() {
   return (
     <div>
       <Switch>
-        <Route exact path='/'></Route>
+        <Route exact path='/'
+          component={() => <AddProject/>}
+        >
+        </Route>
         <Route exact path='/bio'></Route>
         <Route exact path='/projects'
           component={() => <ProjectsView/>}
@@ -25,7 +28,7 @@ function Routes() {
         </PrivateRoute>
         <PrivateRoute
           exact
-          path='/admin-projects'
+          path='/projects-admin'
           component={() => <AddProject/>}
         >
         </PrivateRoute>

@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
   Nav,
   NavItem,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  // NavbarText,
   Button
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
@@ -22,26 +20,21 @@ const NavBar = ({ admin }) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, []);
-
   const authenticated = () => (
     <>
-    <UncontrolledDropdown nav inNavbar>
+    <UncontrolledDropdown nav inNavbar active>
     <DropdownToggle nav caret>
       Admin
     </DropdownToggle>
     <DropdownMenu right>
       <DropdownItem>
-        Bio
+      <NavLink to='/projects-admin'>
+      Projects 2nd try
+      </NavLink>
       </DropdownItem>
-      <DropdownItem>
+      {/* <DropdownItem as={Link} to='/projects-admin'>
         Projects
-      </DropdownItem>
+      </DropdownItem> */}
       <DropdownItem divider />
       <DropdownItem>
         Tech
@@ -68,28 +61,28 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar color="info" light expand="lg">
-        <Link className="nav-link" to="/">JIM CONNER</Link>
+      <Navbar color='info' light expand='lg'>
+        <Link className='nav-link' to='/'>JIM CONNER</Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            <Nav className='mr-auto' navbar>
             <NavItem>
-              <Link className="nav-link" to="/projects">
+              <Link className='nav-link' to='/projects'>
               PROJECTS
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/about">
+              <Link className='nav-link' to='/about'>
                 ABOUT
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/tech">
+              <Link className='nav-link' to='/tech'>
                 TECH
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/contact">
+              <Link className='nav-link' to='/contact'>
                 CONTACT
               </Link>
             </NavItem>

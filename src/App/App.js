@@ -23,7 +23,6 @@ function App() {
       <Router>
         <NavBar
         admin={admin}
-
         />
         <Routes
         admin={admin}
