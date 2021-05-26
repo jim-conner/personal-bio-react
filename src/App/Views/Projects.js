@@ -7,6 +7,7 @@ function ProjectsView({ admin, projects, setProjects }) {
   useEffect(() => {
     getProjects().then((projectsArray) => (setProjects(projectsArray)));
   }, []);
+  // empty dependency array might be an issue but might need to move getProjects to index
 
   return (
     <div className='cardHolder'>

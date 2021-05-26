@@ -17,23 +17,13 @@ import { deleteProject } from '../../helpers/data/projectData';
 function ProjectCard({ admin, setProjects, ...projectObj }) {
   // const [editNow, setEditNow] = useState(false);
 
-  // const handleClick = (type) => {
-  //   switch (type) {
-  //     case 'delete':
-  //       deleteProject(projectObj.firebaseKey)
-  //         .then((projectsArray) => setProjects(projectsArray));
-  //       break;
-  //     case 'edit':
-  //       // setEditNow((prevState) => !prevState);
-  //       break;
-  //     default:
-  //       console.warn('nothing selected');
-  //   }
-  // };
   const handleClick = (type) => {
     if (type === 'delete') {
-      console.warn(projectObj.firebaseKey);
-      console.warn(deleteProject(projectObj.firebaseKey));
+      deleteProject(projectObj.firebaseKey).then((response) => console.warn(response));
+      // console.warn('trying to delete', projectObj.firebaseKey);
+      // console.warn(deleteProject(projectObj.firebaseKey));
+      // deleteProject(projectObj.firebaseKey)
+      //   .then((projectsArray) => setProjects(projectsArray));
     }
   };
 
