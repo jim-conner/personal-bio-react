@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import {
   Button, Form, FormGroup, Label, Input
 } from 'reactstrap';
-import { createProject } from '../../../helpers/data/projectData';
+import {
+  createProject,
+  updateProject
+} from '../../../helpers/data/projectData';
 
 function AddEditProjectForm({ setProjects, ...projectObj }) {
   const [project, setProject] = useState({
@@ -11,7 +14,8 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
     firebaseKey: projectObj?.firebaseKey || null,
     image: projectObj?.image || '',
     gitHubUrl: projectObj?.gitHubUrl || '',
-    deployUrl: projectObj?.deployUrl || ''
+    deployUrl: projectObj?.deployUrl || '',
+    description: projectObj?.description || ''
   });
 
   const handleInputChange = (e) => {
@@ -23,7 +27,12 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createProject(project).then((projectsArray) => (setProjects(projectsArray)));
+    if (projectObj.firebaseKey) {
+      updateProject(project)
+        .then((response) => setProjects(response));
+    } else {
+      createProject(project).then((projectsArray) => (setProjects(projectsArray)));
+    }
   };
 
   return (
@@ -74,7 +83,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
         <FormGroup check>
           <Label check>
             <Input type="radio" name="radio1"
-              value={project.available} need to work on this later T/F
+              value={project.available}
             />{' '}
             Yes
           </Label>
