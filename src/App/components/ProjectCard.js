@@ -19,11 +19,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
 
   const handleClick = (type) => {
     if (type === 'delete') {
-      deleteProject(projectObj.firebaseKey).then((response) => console.warn(response));
+      // deleteProject(projectObj.firebaseKey).then((response) => console.warn(response));
       // console.warn('trying to delete', projectObj.firebaseKey);
       // console.warn(deleteProject(projectObj.firebaseKey));
-      // deleteProject(projectObj.firebaseKey)
-      //   .then((projectsArray) => setProjects(projectsArray));
+      deleteProject(projectObj)
+        .then((projectsArray) => setProjects(projectsArray));
     }
   };
 
