@@ -5,7 +5,7 @@ import AddProject from '../App/components/forms/AddProject';
 import ProjectsView from '../App/Views/Projects';
 import PrivateRoute from './PrivateRoute';
 
-function Routes({ setProjects, projects }) {
+function Routes({ admin, setProjects, projects }) {
   return (
     <div>
       <Switch>
@@ -19,6 +19,7 @@ function Routes({ setProjects, projects }) {
         <Route exact path='/bio'></Route>
         <Route exact path='/projects'
           component={() => <ProjectsView
+            admin={admin}
             projects={projects}
             setProjects={setProjects}
           />}
@@ -44,6 +45,7 @@ function Routes({ setProjects, projects }) {
 }
 
 Routes.propTypes = {
+  admin: PropTypes.any,
   projects: PropTypes.array,
   setProjects: PropTypes.func
 };

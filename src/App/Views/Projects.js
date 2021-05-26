@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getProjects } from '../../helpers/data/projectData';
 import ProjectCard from '../components/ProjectCard';
 
-function ProjectsView({ projects, setProjects }) {
+function ProjectsView({ admin, projects, setProjects }) {
   useEffect(() => {
     getProjects().then((projectsArray) => (setProjects(projectsArray)));
   }, []);
@@ -14,6 +14,7 @@ function ProjectsView({ projects, setProjects }) {
         <ProjectCard
           // key={projectObj.firebaseKey}
           key={i}
+          admin={admin}
           {...projectObj}
         />
       ))}
@@ -21,6 +22,7 @@ function ProjectsView({ projects, setProjects }) {
   );
 }
 ProjectsView.propTypes = {
+  admin: PropTypes.any,
   projects: PropTypes.array,
   setProjects: PropTypes.func,
   projectObj: PropTypes.object
