@@ -15,6 +15,7 @@ function ProjectsView({ admin, projects, setProjects }) {
           // key={projectObj.firebaseKey}
           key={i}
           admin={admin}
+          setProjects={setProjects}
           {...projectObj}
         />
       ))}

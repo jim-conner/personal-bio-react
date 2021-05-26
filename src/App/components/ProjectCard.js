@@ -20,8 +20,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
   const handleClick = (type) => {
     switch (type) {
       case 'delete':
-        deleteProject(projectObj.firebaseKey, admin)
+        // console.warn(projectObj.firebaseKey);
+        // console.warn(deleteProject(projectObj.firebaseKey));
+        deleteProject(projectObj.firebaseKey)
           .then((projectsArray) => setProjects(projectsArray));
+
         break;
       case 'edit':
         // setEditNow((prevState) => !prevState);
@@ -53,7 +56,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
       <Card body
         className='customizedCard'
         // key={projectObj.firebaseKey}
-        // color='transparent'
+        color='transparent'
         >
         <CardImg top width="100%" height="200px"src={projectObj.image} alt="Player Card"
         />
@@ -66,7 +69,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           {/* </Button> */}
           {/* <Button to={deployedUrl}>Deployed Site</Button> */}
           {/* {
-            editNow && <PlayerForm
+            editNow && <PlayerForm change this fr0om player
             setPlayers={setPlayers}
             firebaseKey={firebaseKey}
             uid={uid}
@@ -79,8 +82,8 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         {
             admin
               ? <>
-                <Button color='success'onClick={() => handleClick('edit')}>Edit</Button>
-                <Button color='danger'onClick={() => handleClick('delete')}>Delete</Button>
+                <Button color='success' onClick={() => handleClick('edit')}>Edit</Button>
+                <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
               </>
               : ''
           }
