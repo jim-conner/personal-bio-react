@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // import { useHistory } from 'react-router-dom';
 import {
-  // Button,
+  Button,
   CardImg,
   Card,
   CardTitle,
@@ -12,8 +12,21 @@ import {
   CardBody,
   CardLink,
 } from 'reactstrap';
+import { deleteProject } from '../../helpers/data/projectData';
 
-function ProjectCard({ ...projectObj }) {
+function ProjectCard({ admin, setProjects, ...projectObj }) {
+  // const [editNow, setEditNow] = useState(false);
+
+  const handleClick = (type) => {
+    if (type === 'delete') {
+      // deleteProject(projectObj.firebaseKey).then((response) => console.warn(response));
+      // console.warn('trying to delete', projectObj.firebaseKey);
+      // console.warn(deleteProject(projectObj.firebaseKey));
+      deleteProject(projectObj)
+        .then((projectsArray) => setProjects(projectsArray));
+    }
+  };
+
   return (
       <Card body
         className='customizedCard'
@@ -26,28 +39,29 @@ function ProjectCard({ ...projectObj }) {
           <CardTitle tag="h3">{projectObj.title}</CardTitle>
           <CardText tag="h5">{projectObj.description}</CardText>
           <CardLink href={projectObj.gitHubUrl}>GitHub Repo</CardLink>
-          {/* <Button color='info' onClick={() => handleClick('edit')}> */}
             {/* {editNow ? 'Close Form' : 'Edit Form'} */}
-          {/* </Button>
-          <Button color='danger'onClick={() => handleClick('delete')}>Delete Author
-          </Button> */}
           {/* <Button to={deployedUrl}>Deployed Site</Button> */}
           {/* {
-          editNow && <PlayerForm
-            setPlayers={setPlayers}
-            firebaseKey={firebaseKey}
-            uid={uid}
-            user={user}
-            name={name}
-            imageUrl={imageUrl}
-            position={position}
-          />} */}
+            editNow &&
+            AddProject edit for will go here
+           */}
         </CardBody>
+        {
+            admin
+              ? <>
+                <Button color='success' onClick={() => handleClick('edit')}>Edit</Button>
+                <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
+              </>
+              : ''
+          }
       </Card>
   );
 }
 
 ProjectCard.propTypes = {
+  admin: PropTypes.any,
+  // projects: PropTypes.array,
+  setProjects: PropTypes.func,
   projectObj: PropTypes.object
 };
 

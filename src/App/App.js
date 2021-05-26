@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import Routes from '../helpers/Routes';
 import './App.scss';
 import NavBar from './components/NavBar';
+import { getProjects } from '../helpers/data/projectData';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -17,6 +18,10 @@ function App() {
         setAdmin(false);
       }
     });
+  }, []);
+
+  useEffect(() => {
+    getProjects().then((projectsArray) => (setProjects(projectsArray)));
   }, []);
 
   return (
