@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -12,21 +12,21 @@ import {
   CardBody,
   CardLink,
 } from 'reactstrap';
-import { deleteProject } from '../../helpers/data/projectData';
+import { deleteProject, updateProject } from '../../helpers/data/projectData';
+import AddEditProjectForm from './forms/AddProject';
 
 function ProjectCard({ admin, setProjects, ...projectObj }) {
-  // const [editNow, setEditNow] = useState(false);
+  const [editNow, setEditNow] = useState(false);
 
   const handleClick = (type) => {
     if (type === 'delete') {
-      // deleteProject(projectObj.firebaseKey).then((response) => console.warn(response));
-      // console.warn('trying to delete', projectObj.firebaseKey);
-      // console.warn(deleteProject(projectObj.firebaseKey));
       deleteProject(projectObj)
         .then((projectsArray) => setProjects(projectsArray));
+    } else if (type === 'edit') {
+      updateProject(projectObj).then((response) => console.warn(response));
     }
   };
-
+  console.warn(setEditNow);
   return (
       <Card body
         className='customizedCard'
@@ -39,17 +39,18 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           <CardTitle tag="h3">{projectObj.title}</CardTitle>
           <CardText tag="h5">{projectObj.description}</CardText>
           <CardLink href={projectObj.gitHubUrl}>GitHub Repo</CardLink>
-            {/* {editNow ? 'Close Form' : 'Edit Form'} */}
           {/* <Button to={deployedUrl}>Deployed Site</Button> */}
-          {/* {
-            editNow &&
-            AddProject edit for will go here
-           */}
+            {editNow ? 'Close Form' : 'Edit Form'}
+            {
+            editNow
+            && <AddEditProjectForm/>
+            }
         </CardBody>
         {
             admin
               ? <>
-                <Button color='success' onClick={() => handleClick('edit')}>Edit</Button>
+                <Button color='success' onClick={() => handleClick('edit')}
+                >{editNow ? 'Close Form' : 'Edit Form'}</Button>
                 <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
               </>
               : ''
