@@ -13,10 +13,10 @@ function ProjectsView({ admin, projects, setProjects }) {
 
   return (
     <div className='cardHolder'>
-      {projects.map((projectObj, i) => (
+      {projects.map((projectObj) => (
         <ProjectCard
-          // key={projectObj.firebaseKey}
-          key={i}
+          key={projectObj.firebaseKey}
+          // key={i}
           admin={admin}
           setProjects={setProjects}
           {...projectObj}

@@ -12,7 +12,7 @@ import {
   CardBody,
   CardLink,
 } from 'reactstrap';
-import { deleteProject, updateProject } from '../../helpers/data/projectData';
+import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
 
 function ProjectCard({ admin, setProjects, ...projectObj }) {
@@ -23,14 +23,12 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
       deleteProject(projectObj)
         .then((projectsArray) => setProjects(projectsArray));
     } else if (type === 'edit') {
-      updateProject(projectObj).then((response) => console.warn(response));
+      setEditNow((prevState) => !prevState);
     }
   };
-  console.warn(setEditNow);
   return (
       <Card body
         className='customizedCard'
-        // key={projectObj.firebaseKey}
         color='transparent'
         >
         <CardImg top width="100%" height="200px"src={projectObj.image} alt="Player Card"
@@ -39,22 +37,25 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           <CardTitle tag="h3">{projectObj.title}</CardTitle>
           <CardText tag="h5">{projectObj.description}</CardText>
           <CardLink href={projectObj.gitHubUrl}>GitHub Repo</CardLink>
+          {/* find alt to href here for links */}
           {/* <Button to={deployedUrl}>Deployed Site</Button> */}
-            {editNow ? 'Close Form' : 'Edit Form'}
-            {
-            editNow
-            && <AddEditProjectForm/>
-            }
         </CardBody>
         {
-            admin
-              ? <>
+          admin
+            ? <>
                 <Button color='success' onClick={() => handleClick('edit')}
                 >{editNow ? 'Close Form' : 'Edit Form'}</Button>
                 <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
               </>
-              : ''
-          }
+            : ''
+            }
+            {
+            editNow
+            && <AddEditProjectForm
+            setProjects={setProjects}
+            {...projectObj}
+            />
+            }
       </Card>
   );
 }
