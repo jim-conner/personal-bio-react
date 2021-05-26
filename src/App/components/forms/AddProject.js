@@ -78,7 +78,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
         onChange={handleInputChange}
         />
       </FormGroup>
-      <FormGroup tag="fieldset">
+      {/* <FormGroup tag="fieldset">
         <legend>Available?</legend>
         <FormGroup check>
           <Label check>
@@ -94,7 +94,7 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
             No
           </Label>
         </FormGroup>
-      </FormGroup>
+      </FormGroup> */}
       <Button color= 'primary' type='submit'>Submit</Button>
     </Form>
   </div>
