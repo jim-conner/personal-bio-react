@@ -1,11 +1,11 @@
 .App {
-  display: flex;
-  background-color: #282c34;
+  // display: flex;
+  // background-color: #282c34;
   min-height: 100vh;
 }
 
-.cardHolder {
-  // display: flex;
+.projectHolder {
+  display: flex;
   flex-wrap: wrap;
   text-align: center;
   margin-top: 10%;

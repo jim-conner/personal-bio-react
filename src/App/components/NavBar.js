@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  // NavLink,
+// NavLink,
   Link
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -84,7 +84,23 @@ const NavBar = ({ admin }) => {
             </NavItem> */}
             {admin && authenticated()}
             {authButtons()}
+            <NavItem>
+            </NavItem>
             </Nav>
+              <Link
+              className='btn btn-outline-light btn-floating m-1'
+              to='mailto:jamesdavidconner@gmail.com'>
+              <i className="fas fa-envelope"></i>
+              </Link>
+              <Link
+              className='btn btn-outline-light btn-floating m-1'
+              to='https://www.linkedin.com/in/jim-conner'>
+              </Link>
+              <Link
+              className='btn btn-outline-light btn-floating m-1'
+              to='https://github.com/jim-conner'
+              >
+              </Link>
             {/* <NavbarText>
               Welcome!
             </NavbarText> */}

@@ -12,7 +12,7 @@ function ProjectsView({ admin, projects, setProjects }) {
   // empty dependency array might be an issue but might need to move getProjects to index
 
   return (
-    <div className='cardHolder'>
+    <div className='projectHolder' id='projects'>
       {projects.map((projectObj) => (
         <ProjectCard
           key={projectObj.firebaseKey}
