@@ -32,25 +32,6 @@ const NavBar = ({ admin }) => {
       Manage Projects
       </Link>
     </NavItem>
-    {/* <UncontrolledDropdown nav inNavbar active>
-    <DropdownToggle nav caret>
-      Admin
-    </DropdownToggle>
-    <DropdownMenu right>
-      <DropdownItem>
-      <NavLink to='/projects-admin'>
-      Projects 2nd try
-      </NavLink>
-      </DropdownItem>
-      <DropdownItem as={Link} to='/projects-admin'>
-        Manage Projects
-      </DropdownItem>
-      <DropdownItem divider />
-      <DropdownItem>
-        Tech
-      </DropdownItem>
-    </DropdownMenu>
-  </UncontrolledDropdown> */}
   </>
   );
 
