@@ -10,9 +10,6 @@ function Routes({ admin, setProjects, projects }) {
     <div>
       <Switch>
         {/* <Route exact path='/'
-          component={() => <AddProject
-            projects={projects}
-            setProjects={setProjects}
           />}
         > */}
         {/* </Route> */}
