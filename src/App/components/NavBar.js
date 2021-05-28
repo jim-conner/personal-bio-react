@@ -54,7 +54,9 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar color='info' fixed='top' light expand='sm'>
-        <HashLink to='/#'>JIM CONNER</HashLink>
+        <HashLink className='nav-name' to='/#'>
+          JIM CONNER
+        </HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className='mr-auto' navbar>
