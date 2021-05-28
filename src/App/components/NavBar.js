@@ -4,7 +4,7 @@ import {
   Link
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 import {
   Collapse,
   Navbar,
@@ -53,25 +53,26 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar color='info' fixed='top' light expand='sm'>
-        <NavHashLink to='/'>JIM CONNER</NavHashLink>
+        <HashLink to='/'>JIM CONNER</HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className='mr-auto' navbar>
-            <NavHashLink className='nav-link' to='/projects'>Projects</NavHashLink>
-            <NavHashLink className='nav-link' to='/projects'>About</NavHashLink>
-            <NavHashLink className='nav-link' to='/projects'>Tech</NavHashLink>
-            <NavHashLink className='nav-link' to='/projects'>Contact</NavHashLink>
-            {/* <NavItem>
+            <HashLink className='nav-link' smooth to='/#projects'>Projects</HashLink>
+            <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
+            <HashLink className='nav-link' to='/#bio'>About</HashLink>
+            <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
+            <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
+            {/* <NavItem id='about'>
               <Link className='nav-link' to='/about'>
                 ABOUT
               </Link>
-            <NavItem>
-              <NavHashLink className='nav-link' to='/projects'>
+            </NavItem>
+            <NavItem id='projects'>
+              <HashLink className='nav-link' to='/projects'>
               PROJECTS
-              </NavHashLink>
-            </NavItem>
-            </NavItem>
-            <NavItem>
+              </HashLink>
+            </NavItem> */}
+            {/* <NavItem>
               <Link className='nav-link' to='/tech'>
                 TECH
               </Link>
@@ -95,7 +96,10 @@ const NavBar = ({ admin }) => {
 
 NavBar.propTypes = {
   admin: PropTypes.any,
-  fixed: PropTypes.string
+  light: PropTypes.bool,
+  // dark: PropTypes.bool,
+  fixed: PropTypes.string,
+  color: PropTypes.string
 };
 
 export default NavBar;

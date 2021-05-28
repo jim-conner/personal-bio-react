@@ -2,26 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import AddProject from '../App/components/forms/AddProject';
-import ProjectsView from '../App/Views/Projects';
+// import ProjectsView from '../App/Views/Projects';
 import PrivateRoute from './PrivateRoute';
+import Home from '../App/Views/Home';
+// import Bio from '../App/Views/Bio';
 
 function Routes({ admin, setProjects, projects }) {
   return (
     <div>
       <Switch>
-        {/* <Route exact path='/'
-          />}
-        > */}
-        {/* </Route> */}
-        {/* <Route exact path='/bio'></Route> */}
-        <Route exact path='/projects'
-          component={() => <ProjectsView
+        <Route exact path='/'
+          component={() => <Home
             admin={admin}
             projects={projects}
             setProjects={setProjects}
           />}
         >
         </Route>
+        {/* <Route exact path='/about'
+          component={() => <Bio
+              // id='about'
+            />}
+        >
+        </Route> */}
+        {/* <Route
+          path='/projects'
+          component={() => <ProjectsView
+            // id='projects'
+            admin={admin}
+            projects={projects}
+            setProjects={setProjects}
+          />}
+          > */}
+        {/* </Route> */}
+
         {/* <Route exact path='/tech'></Route>
         <Route exact path='/contact'></Route> */}
 {/*
