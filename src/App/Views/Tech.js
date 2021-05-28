@@ -1,9 +1,14 @@
 import React from 'react';
+import {
+  Container, Row
+} from 'reactstrap';
 
 function Tech() {
   return (
-    <div>
-    </div>
+    <Container fluid id='tech'>
+    <Row>
+    </Row>
+  </Container>
   );
 }
 

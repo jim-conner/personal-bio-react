@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 
 import Bio from './Bio';
 import ProjectsView from './Projects';
+import Tech from './Tech';
+import Contact from './Contact';
 
 function Home({ admin, projects, setProjects }) {
   return (
-    <div>
+    <div className='homeView' id='/'>
       <ProjectsView
         admin={admin}
         projects={projects}
         setProjects={setProjects}
       />
       <Bio/>
+      <Tech/>
+      <Contact/>
     </div>
   );
 }

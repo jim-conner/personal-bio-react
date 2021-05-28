@@ -15,7 +15,8 @@ import {
   // DropdownToggle,
   // DropdownMenu,
   // DropdownItem,
-  Button
+  Button,
+  // NavbarText
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
 
@@ -53,57 +54,51 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar color='info' fixed='top' light expand='sm'>
-        <HashLink to='/'>JIM CONNER</HashLink>
+        <HashLink to='/#'>JIM CONNER</HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className='mr-auto' navbar>
-            <HashLink className='nav-link' smooth to='/#projects'>Projects</HashLink>
-            <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
-            <HashLink className='nav-link' to='/#bio'>About</HashLink>
-            <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
-            <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
-            {/* <NavItem id='about'>
-              <Link className='nav-link' to='/about'>
-                ABOUT
-              </Link>
-            </NavItem>
-            <NavItem id='projects'>
-              <HashLink className='nav-link' to='/projects'>
-              PROJECTS
-              </HashLink>
-            </NavItem> */}
-            {/* <NavItem>
-              <Link className='nav-link' to='/tech'>
-                TECH
-              </Link>
+            <NavItem>
+              <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
             </NavItem>
             <NavItem>
-              <Link className='nav-link' to='/contact'>
-                CONTACT
-              </Link>
-            </NavItem> */}
+            <HashLink className='nav-link' to='/#bio'>About</HashLink>
+            </NavItem>
+            <NavItem>
+            <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
+            </NavItem>
+            <NavItem>
+            <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
+            </NavItem>
+            <NavItem>
             {admin && authenticated()}
             {authButtons()}
-            <NavItem>
             </NavItem>
             </Nav>
-              <Link
-              className='btn btn-outline-light btn-floating m-1'
-              to='mailto:jamesdavidconner@gmail.com'>
-              <i className="fas fa-envelope"></i>
-              </Link>
-              <Link
-              className='btn btn-outline-light btn-floating m-1'
-              to='https://www.linkedin.com/in/jim-conner'>
-              </Link>
-              <Link
-              className='btn btn-outline-light btn-floating m-1'
-              to='https://github.com/jim-conner'
+            <a
+              className='btn btn-floating'
+              href='mailto:jamesdavidconner@gmail.com'
               >
-              </Link>
-            {/* <NavbarText>
-              Welcome!
-            </NavbarText> */}
+              <i className="fas fa-envelope fa-2x"></i>
+              </a>
+              <a
+              className='btn btn-floating'
+              href='https://www.linkedin.com/in/jim-conner'
+              style={{ display: 'table-cell' }}
+              target = '_blank'
+              rel = 'noopener noreferrer'
+              >
+                <i className="fab fa-linkedin fa-2x" ></i>
+              </a>
+              <a
+              className='btn btn-floating'
+              href='https://github.com/jim-conner'
+              style={{ display: 'table-cell' }}
+              target = '_blank'
+              rel = 'noopener noreferrer'
+              >
+              <i className="fab fa-github-square fa-2x"></i>
+              </a>
           </Collapse>
       </Navbar>
     </div>

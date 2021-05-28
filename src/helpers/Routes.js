@@ -17,8 +17,7 @@ function Routes({ admin, setProjects, projects }) {
             projects={projects}
             setProjects={setProjects}
           />}
-        >
-        </Route>
+        ></Route>
         {/* <Route exact path='/about'
           component={() => <Bio
               // id='about'
