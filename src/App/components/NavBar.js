@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import {
+  // NavLink,
+  Link
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Link, animateScroll as scroll } from "react-scroll";
+// import { HashLink } from 'react-router-hash-link';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem,
   Button
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
@@ -23,7 +26,13 @@ const NavBar = ({ admin }) => {
 
   const authenticated = () => (
     <>
-    <UncontrolledDropdown nav inNavbar active>
+    <NavItem>
+      <Link className='nav-link'
+      to='/admin'>
+      Manage Projects
+      </Link>
+    </NavItem>
+    {/* <UncontrolledDropdown nav inNavbar active>
     <DropdownToggle nav caret>
       Admin
     </DropdownToggle>
@@ -33,15 +42,15 @@ const NavBar = ({ admin }) => {
       Projects 2nd try
       </NavLink>
       </DropdownItem>
-      {/* <DropdownItem as={Link} to='/projects-admin'>
-        Projects
-      </DropdownItem> */}
+      <DropdownItem as={Link} to='/projects-admin'>
+        Manage Projects
+      </DropdownItem>
       <DropdownItem divider />
       <DropdownItem>
         Tech
       </DropdownItem>
     </DropdownMenu>
-  </UncontrolledDropdown>
+  </UncontrolledDropdown> */}
   </>
   );
 

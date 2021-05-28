@@ -9,14 +9,14 @@ function Routes({ admin, setProjects, projects }) {
   return (
     <div>
       <Switch>
-        <Route exact path='/'
+        {/* <Route exact path='/'
           component={() => <AddProject
             projects={projects}
             setProjects={setProjects}
           />}
-        >
-        </Route>
-        <Route exact path='/bio'></Route>
+        > */}
+        {/* </Route> */}
+        {/* <Route exact path='/bio'></Route> */}
         <Route exact path='/projects'
           component={() => <ProjectsView
             admin={admin}
@@ -25,20 +25,25 @@ function Routes({ admin, setProjects, projects }) {
           />}
         >
         </Route>
-        <Route exact path='/tech'></Route>
-        <Route exact path='/contact'></Route>
-
+        {/* <Route exact path='/tech'></Route>
+        <Route exact path='/contact'></Route> */}
+{/*
         <PrivateRoute
           exact
           path='/admin'
         >
-        </PrivateRoute>
-        {/* <PrivateRoute
-          exact
-          path='/projects-admin'
-          component={() => <AddProject/>}
-        >
         </PrivateRoute> */}
+        <PrivateRoute
+          exact
+          path='/admin'
+          admin={admin}
+          component={() => <AddProject
+            // admin={admin}
+            projects={projects}
+            setProjects={setProjects}
+          />}
+        >
+        </PrivateRoute>
       </Switch>
     </div>
   );
