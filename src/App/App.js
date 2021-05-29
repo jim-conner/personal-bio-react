@@ -6,6 +6,7 @@ import './App.scss';
 import NavBar from './components/NavBar';
 import { getProjects } from '../helpers/data/projectData';
 import Footer from './components/Footer';
+// import { signInUser } from '../helpers/auth';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -15,11 +16,17 @@ function App() {
     firebase.auth().onAuthStateChanged((adminInState) => {
       if (adminInState && (adminInState.uid === process.env.REACT_APP_ADMIN_UID)) {
         setAdmin(true);
+        // signInUser();
       } else if (admin || admin === null) {
         setAdmin(false);
       }
     });
   }, []);
+
+  // useEffect(() => {
+  //   if (set
+  //   signInUser();
+  // }, []);
 
   useEffect(() => {
     getProjects().then((projectsArray) => (setProjects(projectsArray)));

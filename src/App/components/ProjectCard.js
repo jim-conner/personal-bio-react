@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   CardImg,
@@ -17,6 +16,7 @@ import AddEditProjectForm from './forms/AddProject';
 
 function ProjectCard({ admin, setProjects, ...projectObj }) {
   const [editNow, setEditNow] = useState(false);
+  const history = useHistory();
 
   const handleClick = (type) => {
     if (type === 'delete') {
@@ -24,6 +24,8 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         .then((projectsArray) => setProjects(projectsArray));
     } else if (type === 'edit') {
       setEditNow((prevState) => !prevState);
+    } else if (type === 'view') {
+      history.push(`/projects/${projectObj.firebaseKey}`);
     }
   };
 
@@ -57,8 +59,6 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
           {/* <CardText tag='h5'>{projectObj.description}</CardText> */}
-        </CardBody>
-        <CardBody>
           <CardLink
           style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
           rel = 'noopener noreferrer'
@@ -69,6 +69,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           rel = 'noopener noreferrer'
           >Deployed Site
           </CardLink>
+          {/* <Button color='primary' onClick={() => handleClick('view')}>View Details</Button> */}
         </CardBody>
      {/* {adminButtons()} */}
      {
