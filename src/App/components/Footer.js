@@ -8,7 +8,7 @@ function Footer() {
         style={{ textCenter: true }}
         light expand='sm'
         color='info'
-        fixed='bottom'
+        // fixed='bottom'
         // className='footer'
       >
         <h5>Copyright © Jim Conner 2021</h5>

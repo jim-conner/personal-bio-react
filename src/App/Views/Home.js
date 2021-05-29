@@ -5,7 +5,6 @@ import Bio from './Bio';
 import ProjectsView from './Projects';
 import Tech from './Tech';
 import Contact from './Contact';
-import Footer from '../components/Footer';
 
 function Home({ admin, projects, setProjects }) {
   return (
@@ -18,7 +17,6 @@ function Home({ admin, projects, setProjects }) {
       <Bio/>
       <Tech/>
       <Contact/>
-      <Footer/>
     </div>
   );
 }

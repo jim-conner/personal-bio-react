@@ -8,7 +8,7 @@ import {
   CardImg,
   Card,
   CardTitle,
-  CardText,
+  // CardText,
   CardBody,
   CardLink,
 } from 'reactstrap';
@@ -27,26 +27,26 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
     }
   };
 
-  const adminButtons = () => {
-    <>
-    {
-      admin
-        ? <>
-            <Button color='success' onClick={() => handleClick('edit')}
-            >{editNow ? 'Close Form' : 'Edit Form'}</Button>
-            <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
-          </>
-        : ''
-        }
-        {
-        editNow
-        && <AddEditProjectForm
-        setProjects={setProjects}
-        {...projectObj}
-        />
-        }
-    </>;
-  };
+  // const adminButtons = () => {
+  //   <>
+  //   {
+  //     admin
+  //       ? <>
+  //           <Button color='success' onClick={() => handleClick('edit')}
+  //           >{editNow ? 'Close Form' : 'Edit Form'}</Button>
+  //           <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
+  //         </>
+  //       : ''
+  //   }
+  //       {
+  //       editNow
+  //       && <AddEditProjectForm
+  //       setProjects={setProjects}
+  //       {...projectObj}
+  //       />
+  //       }
+  //   </>;
+  // };
   return (
       <Card body
         className='customizedCard'
@@ -56,7 +56,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         />
         <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
-          <CardText tag='h5'>{projectObj.description}</CardText>
+          {/* <CardText tag='h5'>{projectObj.description}</CardText> */}
         </CardBody>
         <CardBody>
           <CardLink
@@ -70,7 +70,23 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           >Deployed Site
           </CardLink>
         </CardBody>
-     {adminButtons()}
+     {/* {adminButtons()} */}
+     {
+      admin
+        ? <>
+            <Button color='success' onClick={() => handleClick('edit')}
+            >{editNow ? 'Close Form' : 'Edit Form'}</Button>
+            <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
+          </>
+        : ''
+    }
+        {
+        editNow
+        && <AddEditProjectForm
+        setProjects={setProjects}
+        {...projectObj}
+        />
+        }
       </Card>
   );
 }

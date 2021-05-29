@@ -26,14 +26,11 @@ const NavBar = ({ admin }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const authenticated = () => (
-    <>
     <NavItem>
-      <Link className='nav-link'
-      to='/admin'>
+      <Link className='nav-link' to='/admin'>
       Manage Projects
       </Link>
     </NavItem>
-  </>
   );
 
   const authButtons = () => (
@@ -72,10 +69,8 @@ const NavBar = ({ admin }) => {
             <NavItem>
             <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
             </NavItem>
-            <NavItem>
             {admin && authenticated()}
             {authButtons()}
-            </NavItem>
             </Nav>
             <a
               className='btn btn-floating'
