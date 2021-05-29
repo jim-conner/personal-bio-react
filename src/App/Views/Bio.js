@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container, Row, Col, CardImg
+  Container, Row, Col
 } from 'reactstrap';
 import profilePic from '../images/profilePic.jpg';
 
@@ -10,13 +10,13 @@ function Bio() {
     <Container
     className='bioContainer'
     fluid id='bio'>
-        <h1>ABOUT</h1>
+        <h1>Meet Jim</h1>
       <Row>
         <Col sm='6'>
-          <CardImg
+          <img
           className='portrait'
           src={profilePic}>
-            </CardImg>
+            </img>
         </Col>
         <Col sm='6'>
         <h4>Whether as an ESL Teacher, Afterschool Coordinator, State Government Employee, or even Cheesemonger, my main motivation in my professional life has always be able to offer help and support to others.</h4>
