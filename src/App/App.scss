@@ -1,17 +1,24 @@
 .App {
-  background-color: #282c34;
+  // display: flex;
+  // background-color: #282c34;
   min-height: 100vh;
 }
 
-.cardHolder {
+.projectHolder {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   text-align: center;
+  margin-top: 10%;
+  // justify-content: center;
+  // margin-bottom: 10%;
 }
 .customizedCard {
   max-width: 300px;
   overflow: hidden;
  margin-top: auto;
  border: none !important;
+}
+
+.footer {
+  margin-bottom: 10%;
 }

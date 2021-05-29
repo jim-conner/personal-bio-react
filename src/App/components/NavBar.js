@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import {
+// NavLink,
+  Link
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { HashLink } from 'react-router-hash-link';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Button
+  // UncontrolledDropdown,
+  // DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem,
+  Button,
+  // NavbarText
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../../helpers/auth';
 
@@ -21,27 +26,11 @@ const NavBar = ({ admin }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const authenticated = () => (
-    <>
-    <UncontrolledDropdown nav inNavbar active>
-    <DropdownToggle nav caret>
-      Admin
-    </DropdownToggle>
-    <DropdownMenu right>
-      <DropdownItem>
-      <NavLink to='/projects-admin'>
-      Projects 2nd try
-      </NavLink>
-      </DropdownItem>
-      {/* <DropdownItem as={Link} to='/projects-admin'>
-        Projects
-      </DropdownItem> */}
-      <DropdownItem divider />
-      <DropdownItem>
-        Tech
-      </DropdownItem>
-    </DropdownMenu>
-  </UncontrolledDropdown>
-  </>
+    <NavItem>
+      <Link className='nav-link' to='/admin'>
+      Manage Projects
+      </Link>
+    </NavItem>
   );
 
   const authButtons = () => (
@@ -61,37 +50,52 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar color='info' light expand='lg'>
-        <Link className='nav-link' to='/'>JIM CONNER</Link>
+      <Navbar color='info' fixed='top' light expand='sm'>
+        <HashLink className='nav-name' to='/#'>
+          JIM CONNER
+        </HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className='mr-auto' navbar>
             <NavItem>
-              <Link className='nav-link' to='/projects'>
-              PROJECTS
-              </Link>
+              <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
             </NavItem>
             <NavItem>
-              <Link className='nav-link' to='/about'>
-                ABOUT
-              </Link>
+            <HashLink className='nav-link' to='/#bio'>About</HashLink>
             </NavItem>
             <NavItem>
-              <Link className='nav-link' to='/tech'>
-                TECH
-              </Link>
+            <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
             </NavItem>
             <NavItem>
-              <Link className='nav-link' to='/contact'>
-                CONTACT
-              </Link>
+            <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
             </NavItem>
             {admin && authenticated()}
             {authButtons()}
             </Nav>
-            {/* <NavbarText>
-              Welcome!
-            </NavbarText> */}
+            <a
+              className='btn btn-floating'
+              href='mailto:jamesdavidconner@gmail.com'
+              >
+              <i className="fas fa-envelope fa-2x"></i>
+              </a>
+              <a
+              className='btn btn-floating'
+              href='https://www.linkedin.com/in/jim-conner'
+              style={{ display: 'table-cell' }}
+              target = '_blank'
+              rel = 'noopener noreferrer'
+              >
+                <i className="fab fa-linkedin fa-2x" ></i>
+              </a>
+              <a
+              className='btn btn-floating'
+              href='https://github.com/jim-conner'
+              style={{ display: 'table-cell' }}
+              target = '_blank'
+              rel = 'noopener noreferrer'
+              >
+              <i className="fab fa-github-square fa-2x"></i>
+              </a>
           </Collapse>
       </Navbar>
     </div>
@@ -99,7 +103,11 @@ const NavBar = ({ admin }) => {
 };
 
 NavBar.propTypes = {
-  admin: PropTypes.any
+  admin: PropTypes.any,
+  light: PropTypes.bool,
+  // dark: PropTypes.bool,
+  fixed: PropTypes.string,
+  color: PropTypes.string
 };
 
 export default NavBar;

@@ -5,6 +5,7 @@ import Routes from '../helpers/Routes';
 import './App.scss';
 import NavBar from './components/NavBar';
 import { getProjects } from '../helpers/data/projectData';
+import Footer from './components/Footer';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -35,6 +36,8 @@ function App() {
         projects={projects}
         setProjects={setProjects}
         />
+        <Footer/>
+
       </Router>
     </>
   );
