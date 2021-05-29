@@ -13,7 +13,9 @@ function ProjectsView({ admin, projects, setProjects }) {
 
   return (
     <div className='projectHolder' id='projects'>
-      <h3>Projects</h3>
+        {/* <h1>Projects</h1> */}
+
+      {/* <h3>Projects</h3> */}
       {projects.map((projectObj) => (
         <ProjectCard
           key={projectObj.firebaseKey}
