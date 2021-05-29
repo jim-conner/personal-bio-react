@@ -28,7 +28,7 @@ const NavBar = ({ admin }) => {
   const authenticated = () => (
     <NavItem>
       <Link className='nav-link' to='/admin'>
-      Manage Projects
+      Admin View
       </Link>
     </NavItem>
   );

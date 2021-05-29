@@ -36,7 +36,13 @@ function AddEditProjectForm({ setProjects, ...projectObj }) {
   };
 
   return (
-  <div>
+  <div
+  style={{
+    paddingTop: '50%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  }}>
     <Form autoComplete='off' onSubmit={handleSubmit}>
       <FormGroup>
         <Label for="title">App Title</Label>

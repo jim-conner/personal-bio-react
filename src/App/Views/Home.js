@@ -9,6 +9,7 @@ import Contact from './Contact';
 function Home({ admin, projects, setProjects }) {
   return (
     <div className='homeView' id='/'>
+      {/* <h3>Projects</h3> */}
       <ProjectsView
         admin={admin}
         projects={projects}

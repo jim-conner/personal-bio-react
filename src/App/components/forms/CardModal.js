@@ -21,8 +21,9 @@ function CardModal({ ...projectObj }) {
         textAlign: 'center'
       }}
       >
-        <ModalHeader toggle={toggle}>
-          <h3 style={{ textAlign: 'center' }}>{projectObj.title}</h3>
+        <ModalHeader toggle={toggle}
+          style={{ textAlign: 'center' }}
+        >{projectObj.title}
           </ModalHeader>
         <ModalBody>
         <CardImg src={projectObj.image} alt='Player Card'
