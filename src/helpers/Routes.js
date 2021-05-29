@@ -5,6 +5,7 @@ import AddProject from '../App/components/forms/AddProject';
 // import ProjectsView from '../App/Views/Projects';
 import PrivateRoute from './PrivateRoute';
 import Home from '../App/Views/Home';
+// import SingleProject from '../App/Views/SingleProject';
 // import Bio from '../App/Views/Bio';
 
 function Routes({ admin, setProjects, projects }) {
@@ -18,10 +19,10 @@ function Routes({ admin, setProjects, projects }) {
             setProjects={setProjects}
           />}
         ></Route>
-        {/* <Route exact path='/about'
-          component={() => <Bio
-              // id='about'
-            />}
+        {/* <Route
+        exact
+        path='/projects/:firebaseKey'
+        component={SingleProject}
         >
         </Route> */}
         {/* <Route

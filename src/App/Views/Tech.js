@@ -6,9 +6,9 @@ import {
 function Tech() {
   return (
     <Container fluid id='tech'>
-      <h3>TECH</h3>
+      {/* <h3>TECH</h3> */}
     <Row>
-    <i className="fab fa-js fa-5x"></i>
+    {/* <i className="fab fa-js fa-5x"></i> */}
     </Row>
   </Container>
   );

@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   Button,
   CardImg,
   Card,
-  CardTitle,
+  // CardTitle,
   // CardText,
-  CardBody,
-  CardLink,
+  // CardBody,
+  // CardLink,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
+import CardModal from './forms/CardModal';
 
 function ProjectCard({ admin, setProjects, ...projectObj }) {
   const [editNow, setEditNow] = useState(false);
+  const history = useHistory();
 
   const handleClick = (type) => {
     if (type === 'delete') {
@@ -24,6 +25,8 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         .then((projectsArray) => setProjects(projectsArray));
     } else if (type === 'edit') {
       setEditNow((prevState) => !prevState);
+    } else if (type === 'view') {
+      history.push(`/projects/${projectObj.firebaseKey}`);
     }
   };
 
@@ -54,11 +57,9 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         >
         <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
         />
-        <CardBody>
+        {/* <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
-          {/* <CardText tag='h5'>{projectObj.description}</CardText> */}
-        </CardBody>
-        <CardBody>
+          <CardText tag='h5'>{projectObj.description}</CardText>
           <CardLink
           style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
           rel = 'noopener noreferrer'
@@ -69,7 +70,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           rel = 'noopener noreferrer'
           >Deployed Site
           </CardLink>
-        </CardBody>
+          <Button color='primary' onClick={() => handleClick('view')}>View Details</Button>
+        </CardBody> */}
+          <CardModal
+            {...projectObj}
+          />
      {/* {adminButtons()} */}
      {
       admin
