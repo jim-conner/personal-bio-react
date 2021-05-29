@@ -5,7 +5,7 @@ import {
 
 function Contact() {
   return (
-    <Container fluid id='contact'>
+    <Container className={'contactView'} fluid id='contact'>
     <Row>
     <a
       className='btn btn-floating'
@@ -14,12 +14,12 @@ function Contact() {
       target = '_blank'
       rel = 'noopener noreferrer'
       >
-        <i className="fab fa-linkedin fa-10x" ></i>
+        <i className="fab fa-linkedin fa-5x" ></i>
       </a>
     <a
       className='btn btn-floating'
       href='mailto:jamesdavidconner@gmail.com'>
-      <i className="fas fa-envelope fa-10x"></i>
+      <i className="fas fa-envelope fa-5x"></i>
       {/* jamesdavidconner@gmail.com */}
     </a>
       <a
@@ -29,7 +29,7 @@ function Contact() {
       target = '_blank'
       rel = 'noopener noreferrer'
       >
-      <i className="fab fa-github-square fa-10x"></i>
+      <i className="fab fa-github-square fa-5x"></i>
     </a>
     </Row>
   </Container>
