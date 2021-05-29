@@ -6,13 +6,14 @@ import {
   Button,
   CardImg,
   Card,
-  CardTitle,
+  // CardTitle,
   // CardText,
-  CardBody,
-  CardLink,
+  // CardBody,
+  // CardLink,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
+import CardModal from './forms/CardModal';
 
 function ProjectCard({ admin, setProjects, ...projectObj }) {
   const [editNow, setEditNow] = useState(false);
@@ -56,9 +57,9 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         >
         <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
         />
-        <CardBody>
+        {/* <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
-          {/* <CardText tag='h5'>{projectObj.description}</CardText> */}
+          <CardText tag='h5'>{projectObj.description}</CardText>
           <CardLink
           style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
           rel = 'noopener noreferrer'
@@ -69,8 +70,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           rel = 'noopener noreferrer'
           >Deployed Site
           </CardLink>
-          {/* <Button color='primary' onClick={() => handleClick('view')}>View Details</Button> */}
-        </CardBody>
+          <Button color='primary' onClick={() => handleClick('view')}>View Details</Button>
+        </CardBody> */}
+          <CardModal
+            {...projectObj}
+          />
      {/* {adminButtons()} */}
      {
       admin
