@@ -50,7 +50,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
       <Card body
         className='customizedCard'
         color='transparent'
-        >
+      >
         <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
         />
         {/* <CardBody>

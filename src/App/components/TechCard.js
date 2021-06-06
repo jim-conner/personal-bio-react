@@ -10,7 +10,7 @@ function TechCard() {
     >
       <CardImg
       top
-      width='100%' 
+      width='100%'
       height='200px'
       // src={}
       alt='Tech Card'

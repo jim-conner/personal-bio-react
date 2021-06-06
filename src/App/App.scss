@@ -2,11 +2,11 @@
   // display: flex;
   // background-color: #282c34;
   min-height: 100vh;
-  justify-content: center;
+  // justify-content: center;
 }
 
 .projectHolder {
-  // background-color: #90b6b4;
+  background-color: #90b6b4;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -17,20 +17,20 @@
 .customizedCard {
   max-width: 300px;
   overflow: hidden;
- margin-top: auto;
- border: none !important;
+  margin-top: auto;
+  border: none !important;
 }
 
 .bioContainer {
-  // padding-left: 10%;
-  background-color: #90b6b4;
+  background-color: #665faa;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.portrait {
-  max-width: 50vh;
+.portraitCol {
+  width: 300px;
   border-radius: 50%;
   // width: 150;
   // height: 150;
@@ -41,7 +41,18 @@
   // overflow: "hidden";
   // borderWidth: 3;
   // borderColor: "red"
+}
 
+.textCol {
+  text-align: justify;
+  text-justify: inter-word;
+
+}
+
+.techContainer {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .contactView {
