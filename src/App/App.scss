@@ -1,4 +1,5 @@
 .App {
+  // height: 100%;
   // display: flex;
   // background-color: #282c34;
   min-height: 100vh;
@@ -6,7 +7,7 @@
 }
 
 .projectHolder {
-  background-color: #90b6b4;
+  background-color: #90b0b6;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -22,8 +23,9 @@
 }
 
 .bioContainer {
-  background-color: #665faa;
-
+  background-color: #8c84d3;
+  // background-color: #1a9ab1;
+  // background-color: rgba(206, 139, 40, 0.904);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -46,26 +48,27 @@
 .textCol {
   text-align: justify;
   text-justify: inter-word;
-
 }
 
 .techContainer {
+  background-color: #90b0b6;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  justify-content: center;
 }
 
 .contactView {
+  background-color: #90b0b6;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-
 }
 
-// .cardModalStyle {
-//   align-content: center;
-// }
+.cardModalStyle {
+  align-content: center;
+  background-color: wheat;
+}
 
 .footer {
   margin-bottom: 10%;

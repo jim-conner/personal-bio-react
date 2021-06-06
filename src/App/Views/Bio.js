@@ -8,9 +8,9 @@ import profilePic from '../images/profilePic.jpg';
 function Bio() {
   return (
     <Container
-    className='bioContainer'
+    // className='bioContainer'
     fluid id='bio'>
-      <Row>
+      <Row className='bioContainer'>
         <Col xs='6'>
           <img
           className='portraitCol'
