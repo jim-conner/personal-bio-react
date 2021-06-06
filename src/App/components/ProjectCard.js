@@ -6,10 +6,6 @@ import {
   Button,
   CardImg,
   Card,
-  // CardTitle,
-  // CardText,
-  // CardBody,
-  // CardLink,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
