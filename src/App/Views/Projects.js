@@ -1,21 +1,11 @@
 import React, {
-// useEffect
 } from 'react';
 import PropTypes from 'prop-types';
-// import { getProjects } from '../../helpers/data/projectData';
 import ProjectCard from '../components/ProjectCard';
 
 function ProjectsView({ admin, projects, setProjects }) {
-  // useEffect(() => {
-  //   getProjects().then((projectsArray) => (setProjects(projectsArray)));
-  // }, []);
-  // empty dependency array might be an issue but might need to move getProjects to index
-
   return (
     <div className='projectHolder' id='projects'>
-        {/* <h1>Projects</h1> */}
-
-      {/* <h3>Projects</h3> */}
       {projects.map((projectObj) => (
         <ProjectCard
           key={projectObj.firebaseKey}
