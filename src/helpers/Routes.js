@@ -10,7 +10,7 @@ import Home from '../App/Views/Home';
 
 function Routes({ admin, setProjects, projects }) {
   return (
-    <div>
+    <>
       <Switch>
         <Route exact path='/'
           component={() => <Home
@@ -56,7 +56,7 @@ function Routes({ admin, setProjects, projects }) {
         >
         </PrivateRoute>
       </Switch>
-    </div>
+    </>
   );
 }
 

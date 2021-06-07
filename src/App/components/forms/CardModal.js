@@ -11,15 +11,16 @@ function CardModal({ ...projectObj }) {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
+    <div
+    className='cardModalStyle'
+    >
       <Button color="primary" onClick={toggle}>View</Button>
       <Modal
       isOpen={modal}
       toggle={toggle}
-      // className={cardModalStyle}
-      style={{
-        textAlign: 'center'
-      }}
+      // style={{
+      //   textAlign: 'center'
+      // }}
       >
         <ModalHeader toggle={toggle}
           style={{ textAlign: 'center' }}

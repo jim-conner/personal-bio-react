@@ -6,10 +6,6 @@ import {
   Button,
   CardImg,
   Card,
-  // CardTitle,
-  // CardText,
-  // CardBody,
-  // CardLink,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
@@ -54,7 +50,7 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
       <Card body
         className='customizedCard'
         color='transparent'
-        >
+      >
         <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
         />
         {/* <CardBody>

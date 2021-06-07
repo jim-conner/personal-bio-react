@@ -17,10 +17,11 @@ function Contact() {
         <i className="fab fa-linkedin fa-5x" ></i>
       </a>
     <a
-      className='btn btn-floating'
+      style={{}}
+      // className='btn btn-floating'
       href='mailto:jamesdavidconner@gmail.com'>
-      <i className="fas fa-envelope fa-5x"></i>
-      {/* jamesdavidconner@gmail.com */}
+      {/* <i className="fas fa-envelope fa-5x"></i> */}
+      jamesdavidconner@gmail.com
     </a>
       <a
       className='btn btn-floating'

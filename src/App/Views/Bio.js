@@ -8,19 +8,21 @@ import profilePic from '../images/profilePic.jpg';
 function Bio() {
   return (
     <Container
-    className='bioContainer'
+    // className='bioContainer'
     fluid id='bio'>
-        <h1>Meet Jim</h1>
       <Row>
-        <Col sm='6'>
+        {/* <Col xs='6'> */}
           <img
-          className='portrait'
+          className='portraitCol'
           src={profilePic}>
             </img>
-        </Col>
-        <Col sm='6'>
-        <h4>Whether as an ESL Teacher, Afterschool Coordinator, State Government Employee, or even Cheesemonger, my main motivation in my professional life has always be able to offer help and support to others.</h4>
-        <h5>Web Development provides a platform for me to leverage new technologies to continue to fufill my professional goals, while building a new skillset in tech.</h5>
+        {/* </Col> */}
+        <Col
+          className='textCol'
+          xs='6'>
+        <h3>MEET JIM</h3>
+        <h5>Whether as an ESL Teacher, Afterschool Coordinator, State Government Employee, or even Cheesemonger, my professional motivations have always centered around being able to offer help and support to others.</h5>
+        <h4>Web Development provides a platform for me to leverage new technologies to continue to fufill my professional goals, while building a new skillset in tech.</h4>
         </Col>
       </Row>
     </Container>
