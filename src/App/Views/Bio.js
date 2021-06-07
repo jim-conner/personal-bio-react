@@ -10,13 +10,13 @@ function Bio() {
     <Container
     // className='bioContainer'
     fluid id='bio'>
-      <Row className='bioContainer'>
-        <Col xs='6'>
+      <Row>
+        {/* <Col xs='6'> */}
           <img
           className='portraitCol'
           src={profilePic}>
             </img>
-        </Col>
+        {/* </Col> */}
         <Col
           className='textCol'
           xs='6'>
