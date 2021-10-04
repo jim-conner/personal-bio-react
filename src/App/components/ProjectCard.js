@@ -6,6 +6,8 @@ import {
   Button,
   CardImg,
   Card,
+  CardImgOverlay,
+  CardTitle
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
@@ -47,12 +49,18 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
   //   </>;
   // };
   return (
-      <Card body
+      <Card body inverse
         className='customizedCard'
         color='transparent'
       >
-        <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
+        <CardImg top width='100%' height='200px'src={projectObj.image} alt={projectObj.title}
         />
+        <CardImgOverlay>
+          <CardTitle tag="h5">{projectObj.title}</CardTitle>
+          <CardModal
+            {...projectObj}
+          />
+        </CardImgOverlay>
         {/* <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
           <CardText tag='h5'>{projectObj.description}</CardText>
@@ -68,9 +76,6 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
           </CardLink>
           <Button color='primary' onClick={() => handleClick('view')}>View Details</Button>
         </CardBody> */}
-          <CardModal
-            {...projectObj}
-          />
      {/* {adminButtons()} */}
      {
       admin
