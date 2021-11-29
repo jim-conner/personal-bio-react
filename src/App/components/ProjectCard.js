@@ -52,26 +52,12 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         className='customizedCard'
         color='transparent'
       >
-        <CardImg top width='100%' height='100%'src={projectObj.image} alt={projectObj.title}
+        <CardImg
+          src={projectObj.image} alt={projectObj.title}
         />
           <CardModal
             {...projectObj}
           />
-        {/* <CardBody>
-          <CardTitle tag='h3'>{projectObj.title}</CardTitle>
-          <CardText tag='h5'>{projectObj.description}</CardText>
-          <CardLink
-          style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
-          rel = 'noopener noreferrer'
-          >GitHub Repo
-          </CardLink>
-          <CardLink
-          style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
-          rel = 'noopener noreferrer'
-          >Deployed Site
-          </CardLink>
-          <Button color='primary' onClick={() => handleClick('view')}>View Details</Button>
-        </CardBody> */}
      {/* {adminButtons()} */}
      {
       admin

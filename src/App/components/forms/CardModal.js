@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button, Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay,
+  Button, Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay, ModalFooter,
   // ButtonGroup
   // ModalFooter
 } from 'reactstrap';
@@ -18,13 +18,12 @@ function CardModal({ ...projectObj }) {
       <Modal
       isOpen={modal}
       toggle={toggle}
+      centered
       // style={{
       //   textAlign: 'center'
       // }}
       >
-        <ModalHeader
-         charCode="Y"
-          style={{ textAlign: 'center' }}
+        <ModalHeader toggle={toggle}
         >{projectObj.title}
           </ModalHeader>
         <ModalBody>
@@ -32,7 +31,7 @@ function CardModal({ ...projectObj }) {
         />
         {projectObj.description}
         </ModalBody>
-        {/* <ModalFooter> */}
+        <ModalFooter>
           {/* <ButtonGroup> */}
             <Button color="secondary"
              style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
@@ -45,7 +44,7 @@ function CardModal({ ...projectObj }) {
             >GitHub Repo
               </Button>{' '}
           {/* </ButtonGroup> */}
-        {/* </ModalFooter> */}
+        </ModalFooter>
       </Modal>
     </CardImgOverlay>
   );
