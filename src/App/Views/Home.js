@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import Bio from './Bio';
 // import { Container } from 'reactstrap';
 import ProjectsView from './Projects';
-import Tech from './Tech';
+// import Tech from './Tech';
 // import Contact from './Contact';
 
 function Home({ admin, projects, setProjects }) {
@@ -17,7 +17,7 @@ function Home({ admin, projects, setProjects }) {
         setProjects={setProjects}
       />
       {/* <Bio/> */}
-      <Tech/>
+      {/* <Tech/> */}
       {/* <Contact/> */}
     </div>
   );

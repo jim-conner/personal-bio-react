@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
-  Button, Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay, ModalFooter,
+  Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay, ModalFooter,
   // ButtonGroup
   // ModalFooter
 } from 'reactstrap';
@@ -18,27 +19,25 @@ function CardModal({ ...projectObj }) {
       toggle={toggle}
       centered
       >
-        <ModalHeader toggle={toggle}
-        >{projectObj.title}
-          </ModalHeader>
+        <CardImg src={projectObj.image} alt='Player Card'/>
+        <ModalHeader toggle={toggle} >
+          {projectObj.title}
+        </ModalHeader>
         <ModalBody>
-        <CardImg src={projectObj.image} alt='Player Card'
-        />
-        {projectObj.description}
+            {projectObj.description}
         </ModalBody>
-        <ModalFooter>
-          {/* <ButtonGroup> */}
-            <Button color="secondary"
-             style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
-             rel = 'noopener noreferrer'
-             >Deployed Site
-            </Button>
-            <Button color="primary"
-            style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
+        <ModalFooter style={{ display: 'flex', justifyContent: 'center' }}>
+          <Link color="secondary"
+            style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
             rel = 'noopener noreferrer'
-            >GitHub Repo
-              </Button>{' '}
-          {/* </ButtonGroup> */}
+            >Deployed Site
+          </Link>
+          {' | '}
+          <Link color="primary"
+          style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
+          rel = 'noopener noreferrer'
+          >GitHub Repo
+          </Link>
         </ModalFooter>
       </Modal>
     </CardImgOverlay>
