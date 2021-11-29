@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <Navbar
-        style={{ textCenter: true }}
+        // style={{ textCenter: true }}
         light expand='sm'
         color='info'
         // fixed='bottom'

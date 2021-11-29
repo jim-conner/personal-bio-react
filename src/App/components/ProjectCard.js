@@ -55,9 +55,9 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         <CardImg
           src={projectObj.image} alt={projectObj.title}
         />
-          <CardModal
-            {...projectObj}
-          />
+        <CardModal
+          {...projectObj}
+        />
      {/* {adminButtons()} */}
      {
       admin

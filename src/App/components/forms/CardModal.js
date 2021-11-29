@@ -12,16 +12,11 @@ function CardModal({ ...projectObj }) {
 
   return (
     <CardImgOverlay style={{ cursor: 'pointer' }} onClick={toggle}
-    // className='cardModalStyle'
     >
-      {/* <Button color="primary" >View</Button> */}
       <Modal
       isOpen={modal}
       toggle={toggle}
       centered
-      // style={{
-      //   textAlign: 'center'
-      // }}
       >
         <ModalHeader toggle={toggle}
         >{projectObj.title}
