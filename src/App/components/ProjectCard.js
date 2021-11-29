@@ -6,8 +6,7 @@ import {
   Button,
   CardImg,
   Card,
-  CardImgOverlay,
-  CardTitle
+  ButtonGroup,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
@@ -53,14 +52,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
         className='customizedCard'
         color='transparent'
       >
-        <CardImg top width='100%' height='200px'src={projectObj.image} alt={projectObj.title}
+        <CardImg top width='100%' height='100%'src={projectObj.image} alt={projectObj.title}
         />
-        <CardImgOverlay>
-          <CardTitle tag="h5">{projectObj.title}</CardTitle>
           <CardModal
             {...projectObj}
           />
-        </CardImgOverlay>
         {/* <CardBody>
           <CardTitle tag='h3'>{projectObj.title}</CardTitle>
           <CardText tag='h5'>{projectObj.description}</CardText>
@@ -79,11 +75,11 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
      {/* {adminButtons()} */}
      {
       admin
-        ? <>
+        ? <ButtonGroup>
             <Button color='success' onClick={() => handleClick('edit')}
             >{editNow ? 'Close Form' : 'Edit Form'}</Button>
             <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
-          </>
+          </ButtonGroup>
         : ''
     }
         {
