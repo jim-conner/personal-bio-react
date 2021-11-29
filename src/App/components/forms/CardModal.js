@@ -10,7 +10,9 @@ function CardModal({ ...projectObj }) {
   const toggle = () => setModal(!modal);
 
   return (
-    <CardImgOverlay style={{ cursor: 'pointer' }} onClick={toggle}
+    <CardImgOverlay
+      style={{ cursor: 'pointer' }}
+      onClick={toggle}
     >
       <Modal
       isOpen={modal}
