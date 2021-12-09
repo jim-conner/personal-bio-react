@@ -1,38 +1,42 @@
 .App {
-  // height: 100%;
-  // display: flex;
-  // background-color: #282c34;
+  height: 100%;
   min-height: 100vh;
-  // justify-content: center;
 }
+
 // .homeView {
-  // background-color: ;
+//   background-color: red ;
 // }
 
 .projectHolder {
-  // background-color: #90b0b6;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  margin-top: 10%;
-  justify-content: center;
+  display: grid;
+  background-color: #90b0b6;
+  flex-flow: row wrap;
+  // text-align: center;
+  // margin-top: 10%;
+  // justify-content: center;
   // margin-bottom: 10%;
 }
 .customizedCard {
-  max-width: 300px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
   overflow: hidden;
-  margin-top: auto;
   border: none !important;
+  // background-color: cornflowerblue;
+  // width: 30%;
+  // margin: 0px;
+  margin: 10px;
 }
 
-.bioContainer {
-  // background-color: #8c84d3;
-  // background-color: #1a9ab1;
-  // background-color: rgba(206, 139, 40, 0.904);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.cardModalStyle {
+  align-content: center;
 }
+
+// .bioContainer {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
 
 .portraitCol {
   // min-width: 80%;
@@ -58,32 +62,15 @@
   text-justify: inter-word;
 }
 
-.techContainer {
-  // background-color: #90b0b6;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+// .techContainer {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
 
-.contactView {
-  // background-color: #90b0b6;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
-.cardModalStyle {
-  align-content: center;
-  // background-color: wheat;
-}
-
-.footer {
-  margin-bottom: 10%;
-}
-
-#hr {
-  // color: black;
-  background-color: blue;
-  width: 5;
-}
+// .contactView {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-content: center;
+// }

@@ -1,13 +1,8 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import 'variables';
 
-// html, body {
-//   display: flex;
-//   height: 100%;
-//   margin: 0;
-//   align-self: center !important;
-// }
-
-// body {
-//   background-color: $favColor;
-// }
+html, body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
   Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay, ModalFooter,
 } from 'reactstrap';
@@ -28,23 +28,23 @@ function CardModal({ ...projectObj }) {
             {projectObj.description}
         </ModalBody>
         <ModalFooter style={{ display: 'flex', justifyContent: 'center' }}>
-          <Link
+          <a
             style={{ display: 'table-cell' }}
             href={projectObj.deployUrl}
             target = '_blank'
             rel = 'noopener noreferrer'
           >
               Deployed Site
-          </Link>
+          </a>
           {' | '}
-          <Link
+          <a
             style={{ display: 'table-cell' }}
             href={projectObj.gitHubUrl}
             target = '_blank'
             rel = 'noopener noreferrer'
           >
             GitHub Repo
-          </Link>
+          </a>
         </ModalFooter>
       </Modal>
     </CardImgOverlay>
