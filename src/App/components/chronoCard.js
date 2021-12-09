@@ -3,7 +3,7 @@ import {
   CardImg,
   Card,
 } from 'reactstrap';
-import CardModal from './forms/CardModal';
+// import CardModal from './forms/CardModal';
 
 function ChronoCard() {
   return (
