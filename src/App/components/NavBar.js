@@ -49,8 +49,8 @@ const NavBar = ({ admin }) => {
   );
 
   return (
-    <div>
-      <Navbar color='info' fixed='top' light expand='sm'>
+    <div className='header'>
+      <Navbar color='info' light expand='sm'>
         <HashLink className='nav-name' to='/#'>
           JIM CONNER
         </HashLink>

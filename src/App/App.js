@@ -36,12 +36,12 @@ function App() {
     <>
       <Router>
         <NavBar
-        admin={admin}
+          admin={admin}
         />
         <Routes
-        admin={admin}
-        projects={projects}
-        setProjects={setProjects}
+          admin={admin}
+          projects={projects}
+          setProjects={setProjects}
         />
         <Footer/>
 

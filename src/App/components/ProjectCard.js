@@ -6,6 +6,7 @@ import {
   Button,
   CardImg,
   Card,
+  ButtonGroup,
 } from 'reactstrap';
 import { deleteProject } from '../../helpers/data/projectData';
 import AddEditProjectForm from './forms/AddProject';
@@ -47,38 +48,24 @@ function ProjectCard({ admin, setProjects, ...projectObj }) {
   //   </>;
   // };
   return (
-      <Card body
+      <Card body inverse
         className='customizedCard'
         color='transparent'
       >
-        <CardImg top width='100%' height='200px'src={projectObj.image} alt='Player Card'
+        <CardImg
+          src={projectObj.image} alt={projectObj.title}
         />
-        {/* <CardBody>
-          <CardTitle tag='h3'>{projectObj.title}</CardTitle>
-          <CardText tag='h5'>{projectObj.description}</CardText>
-          <CardLink
-          style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
-          rel = 'noopener noreferrer'
-          >GitHub Repo
-          </CardLink>
-          <CardLink
-          style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
-          rel = 'noopener noreferrer'
-          >Deployed Site
-          </CardLink>
-          <Button color='primary' onClick={() => handleClick('view')}>View Details</Button>
-        </CardBody> */}
-          <CardModal
-            {...projectObj}
-          />
+        <CardModal
+          {...projectObj}
+        />
      {/* {adminButtons()} */}
      {
       admin
-        ? <>
+        ? <ButtonGroup>
             <Button color='success' onClick={() => handleClick('edit')}
             >{editNow ? 'Close Form' : 'Edit Form'}</Button>
             <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
-          </>
+          </ButtonGroup>
         : ''
     }
         {

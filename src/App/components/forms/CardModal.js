@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
 import {
-  Button, Modal, ModalHeader, ModalBody, CardImg,
-  // ButtonGroup
-  // ModalFooter
+  Modal, ModalHeader, ModalBody, CardImg, CardImgOverlay, ModalFooter,
 } from 'reactstrap';
 
 function CardModal({ ...projectObj }) {
@@ -11,42 +10,44 @@ function CardModal({ ...projectObj }) {
   const toggle = () => setModal(!modal);
 
   return (
-    <div
-    className='cardModalStyle'
+    <CardImgOverlay
+      style={{ cursor: 'pointer' }}
+      onClick={toggle}
     >
-      <Button color="primary" onClick={toggle}>View</Button>
       <Modal
       isOpen={modal}
       toggle={toggle}
-      // style={{
-      //   textAlign: 'center'
-      // }}
+      centered
       >
-        <ModalHeader toggle={toggle}
-          style={{ textAlign: 'center' }}
-        >{projectObj.title}
-          </ModalHeader>
+        <ModalHeader toggle={toggle} >
+          {projectObj.title}
+        </ModalHeader>
         <ModalBody>
-        <CardImg src={projectObj.image} alt='Player Card'
-        />
-        {projectObj.description}
+        <CardImg src={projectObj.image} alt='Project Card'/>
+
+            {projectObj.description}
         </ModalBody>
-        {/* <ModalFooter> */}
-          {/* <ButtonGroup> */}
-            <Button color="secondary" onClick={toggle}
-             style={{ display: 'table-cell' }} href={projectObj.deployUrl} target = '_blank'
-             rel = 'noopener noreferrer'
-             >Deployed Site
-            </Button>
-            <Button color="primary" onClick={toggle}
-            style={{ display: 'table-cell' }} href={projectObj.gitHubUrl} target = '_blank'
+        <ModalFooter style={{ display: 'flex', justifyContent: 'center' }}>
+          <a
+            style={{ display: 'table-cell' }}
+            href={projectObj.deployUrl}
+            target = '_blank'
             rel = 'noopener noreferrer'
-            >GitHub Repo
-              </Button>{' '}
-          {/* </ButtonGroup> */}
-        {/* </ModalFooter> */}
+          >
+              Deployed Site
+          </a>
+          {' | '}
+          <a
+            style={{ display: 'table-cell' }}
+            href={projectObj.gitHubUrl}
+            target = '_blank'
+            rel = 'noopener noreferrer'
+          >
+            GitHub Repo
+          </a>
+        </ModalFooter>
       </Modal>
-    </div>
+    </CardImgOverlay>
   );
 }
 
