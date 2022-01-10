@@ -1,9 +1,17 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import 'variables';
 
-html, body {
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
+// html, body {
+//   margin: 0;
+//   height: 100%;
+//   width: 100%;
+//   min-height: 100%;
+// }
+
+body {
+  background-image: url('../App/images/foil-background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }

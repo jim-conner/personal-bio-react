@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div className='footer'>
       <Navbar
-        light expand='sm'
-        color='info'
+        expand='sm'
+        color='dark'
       >
         <h5>Copyright © Jim Conner 2021</h5>
       </Navbar>
