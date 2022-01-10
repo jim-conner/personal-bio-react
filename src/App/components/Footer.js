@@ -6,9 +6,9 @@ function Footer() {
     <div className='footer'>
       <Navbar
         expand='sm'
-        color='dark'
+        color='light'
       >
-        <h5>Copyright © Jim Conner 2021</h5>
+        <h5>Copyright © Jim Conner 2022</h5>
       </Navbar>
     </div>
   );

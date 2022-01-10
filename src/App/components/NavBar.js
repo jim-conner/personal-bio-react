@@ -50,7 +50,7 @@ const NavBar = ({ admin }) => {
 
   return (
     <div className='header'>
-      <Navbar color='dark' sticky='true' light expand='sm'>
+      <Navbar color='light' sticky='true' light expand='sm'>
         <HashLink className='nav-name' to='/#'>
           JIM CONNER
         </HashLink>

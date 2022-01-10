@@ -5,7 +5,7 @@ import Bio from './Bio';
 // import { Container } from 'reactstrap';
 import ProjectsView from './Projects';
 import Tech from './Tech';
-import Contact from './Contact';
+// import Contact from './Contact';
 
 function Home({ admin, projects, setProjects }) {
   return (
@@ -18,7 +18,7 @@ function Home({ admin, projects, setProjects }) {
       />
       <Bio/>
       <Tech/>
-      <Contact/>
+      {/* <Contact/> */}
     </div>
   );
 }
