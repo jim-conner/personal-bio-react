@@ -15,10 +15,10 @@ import {
   // DropdownToggle,
   // DropdownMenu,
   // DropdownItem,
-  Button,
+  // Button,
   // NavbarText
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../../helpers/auth';
+// import { signInUser, signOutUser } from '../../helpers/auth';
 
 const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,26 +33,26 @@ const NavBar = ({ admin }) => {
     </NavItem>
   );
 
-  const authButtons = () => (
-    <NavItem>
-      {
-        admin !== null
-        && <>
-          {
-            admin
-              ? <Button color='danger' onClick={signOutUser}>Admin Out</Button>
-              : <Button color='success' onClick={signInUser}>Admin In</Button>
-          }
-        </>
-      }
-      </NavItem>
-  );
+  // const authButtons = () => (
+  //   <NavItem>
+  //     {
+  //       admin !== null
+  //       && <>
+  //         {
+  //           admin
+  //             ? <Button color='danger' onClick={signOutUser}>Admin Out</Button>
+  //             : <Button color='success' onClick={signInUser}>Admin In</Button>
+  //         }
+  //       </>
+  //     }
+  //     </NavItem>
+  // );
 
   return (
     <div className='header'>
-      <Navbar color='info' light expand='sm'>
+      <Navbar color='dark' sticky='true' dark expand='md'>
         <HashLink className='nav-name' to='/#'>
-          JIM CONNER
+          jim conner
         </HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
@@ -60,17 +60,17 @@ const NavBar = ({ admin }) => {
             <NavItem>
               <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
             <HashLink className='nav-link' to='/#bio'>About</HashLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
             <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
             <HashLink className='nav-link' to='/#contact'>Contact</HashLink>
-            </NavItem>
+            </NavItem> */}
             {admin && authenticated()}
-            {authButtons()}
+            {/* {authButtons()} */}
             </Nav>
             <a
               className='btn btn-floating'
