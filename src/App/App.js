@@ -5,7 +5,7 @@ import Routes from '../helpers/Routes';
 import './App.scss';
 import NavBar from './components/NavBar';
 import { getProjects } from '../helpers/data/projectData';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 // import { signInUser } from '../helpers/auth';
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
           projects={projects}
           setProjects={setProjects}
         />
-        <Footer/>
+        {/* <Footer/> */}
 
       </Router>
     </>

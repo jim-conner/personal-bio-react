@@ -4,6 +4,7 @@ import React from 'react';
 // import { Chrono } from 'react-chrono';
 import {
   Container
+  // Tooltip
 } from 'reactstrap';
 import techArray from '../../helpers/data/techData';
 // import techJson from '../../helpers/data/techs';
@@ -13,6 +14,14 @@ function Tech() {
   // const getImgSrc = (imgName) => {
   //   require(`../images/techpngs/${imgName}`);
   // };
+  // const [toolTipOpen, setToolTipOpen] = useState(false);
+  // const toggle = () => setToolTipOpen(!toolTipOpen);
+
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <Container id='tech'
     className ='techContainer'
@@ -20,13 +29,27 @@ function Tech() {
     <div className='sectionHeader'>TECH</div>
       <div className='projectHolder' id='tech'>
         {techArray.map((tech) => (
-          <div key={tech.id}>
+          <div
+            key={tech.id}
+            id="techDiv"
+          >
+            <a
+              onClick={() => openInNewTab(tech.link)}
+            >
               <img
-              className="techImg" alt={tech.name}
-              // src={`../images/techpngs/${tech.image}`}
+              className="techImg"
+               alt={tech.name}
               src={tech.image}
-              // src={getImgSrc(tech.image)}
               />
+            </a>
+            {/* <Tooltip
+              flip
+              target="techDiv"
+              toggle={toggle}
+              isOpen={toolTipOpen}
+            >
+              {tech.name}
+            </Tooltip> */}
           </div>
         ))}
       </div>

@@ -50,9 +50,9 @@ const NavBar = ({ admin }) => {
 
   return (
     <div className='header'>
-      <Navbar color='light' sticky='true' light expand='sm'>
+      <Navbar color='dark' sticky='true' dark expand='md'>
         <HashLink className='nav-name' to='/#'>
-          JIM CONNER
+          jim conner
         </HashLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
@@ -60,9 +60,9 @@ const NavBar = ({ admin }) => {
             <NavItem>
               <HashLink className='nav-link' to='/#projects'>Projects</HashLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
             <HashLink className='nav-link' to='/#bio'>About</HashLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
             <HashLink className='nav-link' to='/#tech'>Tech</HashLink>
             </NavItem>
